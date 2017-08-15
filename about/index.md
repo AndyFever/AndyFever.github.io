@@ -1,26 +1,23 @@
 ---
 layout: page
-title: About the Jekyll Theme
-excerpt: "So Simple is a responsive Jekyll theme for your words and images."
-modified: 2014-08-08T19:44:38.564948-04:00
-image:
-  feature: so-simple-sample-image-4.jpg
-  credit: WeGraphics
-  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
+title: About Existential Testing
+excerpt: "Disussing the merits of sharing knowledge around testing."
+modified: 2017-08-15T19:44:38.564948-04:00
 ---
 
-Looking for a simple, responsive, theme for your Jekyll powered blog? Well look no further. Here be **So Simple Theme**, the follow up to [**Minimal Mistakes**](http://mmistakes.github.io/minimal-mistakes) --- by designer slash illustrator [Michael Rose](http://mademistakes.com).
+## What the hell is this place all about?
 
-## So Simple Theme is all about:
+*Existential* - __Relating to the existence of a thing.__
 
-* Responsive templates. Looking good on mobile, tablet, and desktop.
-* Gracefully degrading in older browsers. Compatible with Internet Explorer 9+ and all modern browsers.
-* Minimal embellishments and subtle animations.
-* Optional large feature images for posts and pages.
-* [Custom 404 page]({{ site.url }}/404.html) to get you started.
-* [Simple site search](https://github.com/christian-fei/Simple-Jekyll-Search)
-* Support for Disqus Comments
+*Test*        - __A procedure intended to establish the quality, performance, or reliability of something__
 
-<a markdown="0" href="{{ site.url }}/theme-setup" class="btn">Install So Simple Theme</a>
+Somethings we all 'know':
 
-[^1]: Example: *domain.com/category-name/post-title*
+1. When software reaches a customer, it should work in a manner they expect.
+2. We only have a set amount of resources to deliver the software
+2. Code with quality issues is likely to impact #1, or #2 or both.
+
+This site discusses techniques developers and testers can adopt to improve the efficiency of
+delivering code. Initially we will be covering techniques that support the agile methodology, so
+testing in multiple cycles a day with automated tests linked with continuous integration servers right
+the way through to agile reporting techniques.
