@@ -1,0 +1,256 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Git Hints and Tricks &#8211; Rapid Testing</title>
+<meta name="description" content="Here are some simple shortcuts and commands I use when using git in Terminal">
+<meta name="keywords" content="git">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Git Hints and Tricks">
+<meta name="twitter:description" content="Here are some simple shortcuts and commands I use when using git in Terminal">
+<meta name="twitter:site" content="@andy_fever">
+<meta name="twitter:creator" content="@andy_fever">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/site-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git Hints and Tricks">
+<meta property="og:description" content="Here are some simple shortcuts and commands I use when using git in Terminal">
+<meta property="og:url" content="http://localhost:4000/articles/Git-tricks/">
+<meta property="og:site_name" content="Rapid Testing">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/articles/Git-tricks/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Rapid Testing Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+      
+		    
+		    <li><a href="http://localhost:4000/articles/" >Articles</a></li>
+		  
+		    
+		    <li><a href="http://localhost:4000/blog/" >Blog</a></li>
+		  
+		    
+		    <li><a href="http://localhost:4000/search/" >Search</a></li>
+		  
+		    
+		    <li><a href="http://localhost:4000/about/" >About</a></li>
+		  
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<header class="masthead">
+	<div class="wrap">
+      
+  		<a href="http://localhost:4000/" class="site-logo" rel="home" title="Rapid Testing"><img src="http://localhost:4000/images/site-logo.png" width="200" height="200" alt="Rapid Testing logo" class="animated fadeInDown"></a>
+      
+      <h1 class="site-title animated fadeIn"><a href="http://localhost:4000/">Rapid Testing</a></h1>
+		<h2 class="site-description animated fadeIn" itemprop="description">A space for Developers and Testers to discuss things related to testing.</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://localhost:4000/tags/#git" title="Pages tagged git">git</a></li>
+        </ul>
+        
+          <h1 class="entry-title">Git Hints and Tricks</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+          <img src="http://localhost:4000/images/AndyFever.png" class="bio-photo" alt="Andy Fever bio photo"/>
+        
+        <span class="author vcard">By <span class="fn">Andy Fever</span></span>
+        <span class="entry-date date published"><time datetime="2017-08-17T00:00:00+01:00"><i class="fa fa-calendar-o"></i> August 17, 2017</time></span>
+        <span class="entry-date date modified"><time datetime="2017-08-17"><i class="fa fa-pencil"></i> August 17, 2017</time></span>
+        
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=git&amp;text=Git%20Hints%20and%20Tricks&amp;url=http://localhost:4000/articles/Git-tricks/&amp;via=andy_fever" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/Git-tricks/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=http://localhost:4000/articles/Git-tricks/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
+        
+      </footer>
+      <div class="entry-content">
+        <p>One thing that drives me insane is not using some of gits more useful tricks for a few days
+and forgetting them. So to help my challenged neural plasticity I’ve bashed together this blog with a few hints and ticks.</p>
+
+<p>This article will be updated as my knowledge improves.</p>
+
+<h3 id="adding-and-committing-in-one-go">Adding and Committing in one go</h3>
+
+<p>This is pretty simple with git aliases coming to the rescue. First, set up the alias</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git config --global alias.add-commit '!git add -A &amp;&amp; git commit'  
+</code></pre>
+</div>
+
+<p>Then just reference it when you need to add and commit a file.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git add-commit -m 'pithy message'  
+</code></pre>
+</div>
+
+<h3 id="aliasing">Aliasing</h3>
+
+<p>I am a very bad typer, it’s an established fact. So the less typing of long words I have to do the better. This is where aliasing comes in. To substitute one command for a hopefully shorter one, just follow the instructions:</p>
+
+<p>Firstly, update your .bashrc file with the command you want.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>alias gs='git status'
+</code></pre>
+</div>
+
+<p>Then save the file. To force terminal to reload the file use the following command:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>. ~/.bashrc
+</code></pre>
+</div>
+
+<p>You will now be able to use the command gs.</p>
+
+<h3 id="stashing-code-changes">Stashing code changes</h3>
+
+<p>This is one I have use a lot (and maybe overused), it takes all of your changes in the current branch and saves them, reverting the branch back to the head.  Running it is simple:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git stash my-changes
+</code></pre>
+</div>
+
+<p>Then your directory should be clean. If you want to revert the changes:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git stash pop
+</code></pre>
+</div>
+
+<p>If you have stashed a lot and want to clear the stash then use:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git stash clear
+</code></pre>
+</div>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://localhost:4000/articles/Adding-comments-using-disquss/" class="btn" title="Adding Comments using Disqus">Previous</a>
+      
+      
+        <a href="http://localhost:4000/blog/Agile-Testing-with-Cucumber/" class="btn" title="Agile Testing with Cucumber">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2017 Andy Fever. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/so-simple-jekyll-theme/" rel="nofollow">So Simple Theme</a>.</span>
+<div class="social-icons">
+	<a href="https://twitter.com/andy_fever" title="Andy Fever on Twitter" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/AndyFever" title="Andy Fever on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	
+	
+	
+	<a href="https://github.com/andyfever" title="Andy Fever on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+	
+  
+	
+  <a href="http://localhost:4000/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://localhost:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

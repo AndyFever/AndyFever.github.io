@@ -1,0 +1,334 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Setting up a test framework &#8211; Rapid Testing</title>
+<meta name="description" content="This shows how I set up Cucumber with Selenium using Ruby for automated testing on the mac">
+<meta name="keywords" content="cucumber, BDD, ruby, capybara, selenium">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Setting up a test framework">
+<meta name="twitter:description" content="This shows how I set up Cucumber with Selenium using Ruby for automated testing on the mac">
+<meta name="twitter:site" content="@andy_fever">
+<meta name="twitter:creator" content="@andy_fever">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/site-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Setting up a test framework">
+<meta property="og:description" content="This shows how I set up Cucumber with Selenium using Ruby for automated testing on the mac">
+<meta property="og:url" content="http://localhost:4000/blog/Setting-up-a-test-framework/">
+<meta property="og:site_name" content="Rapid Testing">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/Setting-up-a-test-framework/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Rapid Testing Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+      
+		    
+		    <li><a href="http://localhost:4000/articles/" >Articles</a></li>
+		  
+		    
+		    <li><a href="http://localhost:4000/blog/" >Blog</a></li>
+		  
+		    
+		    <li><a href="http://localhost:4000/search/" >Search</a></li>
+		  
+		    
+		    <li><a href="http://localhost:4000/about/" >About</a></li>
+		  
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<header class="masthead">
+	<div class="wrap">
+      
+  		<a href="http://localhost:4000/" class="site-logo" rel="home" title="Rapid Testing"><img src="http://localhost:4000/images/site-logo.png" width="200" height="200" alt="Rapid Testing logo" class="animated fadeInDown"></a>
+      
+      <h1 class="site-title animated fadeIn"><a href="http://localhost:4000/">Rapid Testing</a></h1>
+		<h2 class="site-description animated fadeIn" itemprop="description">A space for Developers and Testers to discuss things related to testing.</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://localhost:4000/tags/#cucumber" title="Pages tagged cucumber">cucumber</a></li><li><a href="http://localhost:4000/tags/#BDD" title="Pages tagged BDD">BDD</a></li><li><a href="http://localhost:4000/tags/#ruby" title="Pages tagged ruby">ruby</a></li><li><a href="http://localhost:4000/tags/#capybara" title="Pages tagged capybara">capybara</a></li><li><a href="http://localhost:4000/tags/#selenium" title="Pages tagged selenium">selenium</a></li>
+        </ul>
+        
+          <h1 class="entry-title">Setting up a test framework</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+          <img src="http://localhost:4000/images/AndyFever.png" class="bio-photo" alt="Andy Fever bio photo"/>
+        
+        <span class="author vcard">By <span class="fn">Andy Fever</span></span>
+        <span class="entry-date date published"><time datetime="2017-08-17T00:00:00+01:00"><i class="fa fa-calendar-o"></i> August 17, 2017</time></span>
+        
+        
+        
+        
+      </footer>
+      <div class="entry-content">
+        <p>As described <a href="https://andyfever.github.io/Agile-Testing-with-Cucumber/&quot;">here</a>, I have got excellent results
+from automated testing with BDD using a framework based on Cucumber.  This blog describes how I set up the framework
+from scratch using my trusty MacBook pro and a few well written (not by me!) acceptance requirements.</p>
+
+<h3 id="requirements">Requirements</h3>
+
+<p>This is the list of tools used in the framework:</p>
+
+<ul>
+  <li>Cucumber</li>
+  <li>Ruby Version Manager (<a href="https://rvm.io/" title="RVM Link">RVM is a environment manager for ruby)</a>)</li>
+  <li>Ruby 2.3.x</li>
+  <li>Ruby Gems (<a href="https://github.com/rubygems/rubygems">Ruby Gems is a package manager for ruby </a>)</li>
+  <li>Capybara (<a href="https://github.com/teamcapybara/capybara" title="Capybara Link">Capybara helps you to automated BDD scenarios)</a>)</li>
+  <li>Selenium</li>
+  <li>Roo (<a href="https://github.com/roo-rb/roo" title="Link for the Roo gem">Roo is a gem for interfacing with spreadsheets </a>)</li>
+  <li>Pry (<a href="https://github.com/pry/pry" title="Pry Link">Pry is a great debugging tool for ruby</a>)</li>
+</ul>
+
+<p>There are one or two other dependencies used like <a href="http://macappstore.org/curl/">Curl</a> and <a href="https://brew.sh/">Homebrew</a>. If you haven’t used them before then you should do a bit of background reading/setup before carrying on.</p>
+
+<h3 id="installing-ruby-and-ruby-gems">Installing Ruby and Ruby Gems</h3>
+
+<p>To install the current development version of Ruby I tend to use Ruby Version Manager (RVM) to manage the Ruby environments - it gives you a lot more flexibility in the long term. In terminal, run the following commands:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+
+  curl -sSL https://get.rvm.io | bash -s stable  
+</code></pre>
+</div>
+<p></p>
+<p>You know have both RVM and Ruby installed. Check it’s all worked as expected:
+    ruby -v</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-darwin15]  
+</code></pre>
+</div>
+<p></p>
+<p>To install Ruby Gems, follow the installation instructions that can be found <a href="https://github.com/rubygems/rubygems">here</a>.</p>
+
+<h3 id="installing-cucumber">Installing Cucumber</h3>
+
+<p>To install Cucumber, do the following:
+    gem install cucumber</p>
+<p></p>
+<p>That’s all there is to that. To see the list of commands available to you now just type:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cucumber --help  
+</code></pre>
+</div>
+<p></p>
+<p>For a simple example of what cucumber does we can initiate a project. Create a new directory and cd into it. Then type:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cucumber --init  
+</code></pre>
+</div>
+<p></p>
+<p>Cucumber will then create the following files for you in the directory</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>└── features
+├── step_definitions
+└── support
+    └── env.rb  
+</code></pre>
+</div>
+<p></p>
+<p>The features directory will contain all your requirements in the format that cucumber will be able to parse. The step definitions directory will contain all your code to implement the tests.  Finally the env.rb file contains everything Cucumber needs to setup your environment.  This includes selenium.  Talking of which…</p>
+
+<h3 id="selenium-setup">Selenium Setup</h3>
+
+<p>Most problems I experienced with this framework where in some way related to Selenium, but the installation process is again simple. Just use the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gem install selenium-webdriver  
+</code></pre>
+</div>
+<p></p>
+<p>That should install the web driver, you still need to specific driver for the browser, in this case we generally used Chrome.  To install we use Homebrew again:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>brew install chromedriver  
+</code></pre>
+</div>
+<p></p>
+<p>This should setup everything you need for your tests to control a browser.</p>
+
+<h3 id="setting-up-your-gemfile">Setting up your Gemfile</h3>
+
+<p>Going forward you will be managing your dependencies which will be stored in the root folder of your project. To create it, run the following while in the root directory of your project:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>echo "source 'https://rubygems.org'" &gt; Gemfile  
+</code></pre>
+</div>
+<p></p>
+<p>You should now have the following setup.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.
+├── Gemfile
+└── features
+  ├── step_definitions
+  └── support
+    └── env.rb  
+</code></pre>
+</div>
+<p></p>
+<p>Now in your gemfile, add the following lines.</p>
+
+<p>gem ‘selenium-webdriver’, ‘&gt;=3.0.5’
+gem ‘cucumber’
+gem ‘test-unit’
+gem “minitest”
+gem “minitest-reporters”
+gem ‘pry’
+gem ‘capybara’
+gem ‘capybara-screenshot’
+gem ‘rspec’
+gem ‘rake’
+gem ‘savon’
+gem ‘roo’</p>
+
+<p>Back in your terminal, you can install or update all the gems any time you want by running</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bundle install  
+</code></pre>
+</div>
+<p></p>
+<h3 id="setting-up-the-envrb-file">Setting up the env.rb file</h3>
+
+<p>In your IDE, open the env.rb file and save the following code:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>require 'capybara/cucumber'
+
+Capybara.register_driver :selenium do |app|
+  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome
+capabilities['chromeOptions'] = { prefs: $chrome_prefs }
+  Capybara::Selenium::Driver.new(app, browser: $browser, desired_capabilities: capabilities)
+end
+
+Capybara.default_driver = :selenium
+Capybara.default_max_wait_time = 5
+Capybara.wait_on_first_by_default = true  
+</code></pre>
+</div>
+<p></p>
+<p>This will let Capybara know to use the chromedriver.</p>
+
+<p>The next blog will describe creating your first test.</p>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://localhost:4000/blog/Agile-Testing-with-Cucumber/" class="btn" title="Agile Testing with Cucumber">Previous</a>
+      
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2017 Andy Fever. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/so-simple-jekyll-theme/" rel="nofollow">So Simple Theme</a>.</span>
+<div class="social-icons">
+	<a href="https://twitter.com/andy_fever" title="Andy Fever on Twitter" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/AndyFever" title="Andy Fever on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	
+	
+	
+	<a href="https://github.com/andyfever" title="Andy Fever on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+	
+  
+	
+  <a href="http://localhost:4000/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://localhost:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

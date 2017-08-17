@@ -1,0 +1,218 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Agile Testing with Cucumber &#8211; Rapid Testing</title>
+<meta name="description" content="One of the surprising things about getting QA teams started with automated testing using BDD is how flexible it can be. You can get started on a basic framework even if you have minimal user and developer support.
+
+">
+<meta name="keywords" content="cucumber, BDD">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Agile Testing with Cucumber">
+<meta name="twitter:description" content="One of the surprising things about getting QA teams started with automated testing using BDD is how flexible it can be. You can get started on a basic framework even if you have minimal user and developer support.
+
+">
+<meta name="twitter:site" content="@andy_fever">
+<meta name="twitter:creator" content="@andy_fever">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/site-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Agile Testing with Cucumber">
+<meta property="og:description" content="One of the surprising things about getting QA teams started with automated testing using BDD is how flexible it can be. You can get started on a basic framework even if you have minimal user and developer support.
+
+">
+<meta property="og:url" content="http://localhost:4000/blog/Agile-Testing-with-Cucumber/">
+<meta property="og:site_name" content="Rapid Testing">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/Agile-Testing-with-Cucumber/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Rapid Testing Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+      
+		    
+		    <li><a href="http://localhost:4000/articles/" >Articles</a></li>
+		  
+		    
+		    <li><a href="http://localhost:4000/blog/" >Blog</a></li>
+		  
+		    
+		    <li><a href="http://localhost:4000/search/" >Search</a></li>
+		  
+		    
+		    <li><a href="http://localhost:4000/about/" >About</a></li>
+		  
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<header class="masthead">
+	<div class="wrap">
+      
+  		<a href="http://localhost:4000/" class="site-logo" rel="home" title="Rapid Testing"><img src="http://localhost:4000/images/site-logo.png" width="200" height="200" alt="Rapid Testing logo" class="animated fadeInDown"></a>
+      
+      <h1 class="site-title animated fadeIn"><a href="http://localhost:4000/">Rapid Testing</a></h1>
+		<h2 class="site-description animated fadeIn" itemprop="description">A space for Developers and Testers to discuss things related to testing.</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://localhost:4000/tags/#cucumber" title="Pages tagged cucumber">cucumber</a></li><li><a href="http://localhost:4000/tags/#BDD" title="Pages tagged BDD">BDD</a></li>
+        </ul>
+        
+          <h1 class="entry-title">Agile Testing with Cucumber</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+          <img src="http://localhost:4000/images/AndyFever.png" class="bio-photo" alt="Andy Fever bio photo"/>
+        
+        <span class="author vcard">By <span class="fn">Andy Fever</span></span>
+        <span class="entry-date date published"><time datetime="2017-08-17T00:00:00+01:00"><i class="fa fa-calendar-o"></i> August 17, 2017</time></span>
+        
+        
+        
+        
+      </footer>
+      <div class="entry-content">
+        <p>One of the surprising things about getting QA teams started with automated testing using BDD is how flexible it can be. You can get started on a basic framework even if you have minimal user and developer support.</p>
+
+<p>Of course it is better if other roles are involved at a frameworks inception but that shouldn’t necessarily be a barrier to it happening at all.</p>
+
+<h3 id="choosing-a-testing-tool">Choosing a Testing Tool</h3>
+
+<p>I have used various agile testing tools, but the best was Cucumber. It is important to remember that cucumber isn’t a automated testing tool itself, it is a parsing tool for linking requirements written in a business domain language to the tools that implement the test. I’ll write a blog somewhere else why this a good thing and we shouldn’t just code automated tests directly.</p>
+
+<figure>
+	<a href="https://cucumber.io/images/cucumber-logo.svg"><img src="https://cucumber.io/images/cucumber-logo.svg" alt="image" /></a>
+</figure>
+
+<p>Cucumber can be used with various other technologies including WATIR (a collection of Ruby libraries providing an API for working with browsers), Java, Ruby… The most successful implementation I have worked on was Cucumber with the implementation layer written in Ruby with Selenium (providing interaction with chrome and Firefox) and Capybara. Capybara help implements with BDD paradigm and speeds up greatly the coding process. It even allows people with less technical skills to write some of the more simple acceptance tests.</p>
+
+<p>This sets up the context for what a few of the blog posts that follow. I’ll cover how to implement this framework for a fictional website and how some of the aspects of BDD can work from my experience.</p>
+
+<h3 id="useful-links">Useful Links:</h3>
+
+<p><a href="https://github.com/teamcapybara/capybara" title="Link for Capybara">Capybara GitHub repo</a></p>
+
+<p><a href="https://cucumber.io/" title="Link for Cucumber Tool">Cucumber Homepage</a></p>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://localhost:4000/articles/Git-tricks/" class="btn" title="Git Hints and Tricks">Previous</a>
+      
+      
+        <a href="http://localhost:4000/blog/Setting-up-a-test-framework/" class="btn" title="Setting up a test framework">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2017 Andy Fever. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/so-simple-jekyll-theme/" rel="nofollow">So Simple Theme</a>.</span>
+<div class="social-icons">
+	<a href="https://twitter.com/andy_fever" title="Andy Fever on Twitter" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/AndyFever" title="Andy Fever on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	
+	
+	
+	<a href="https://github.com/andyfever" title="Andy Fever on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+	
+  
+	
+  <a href="http://localhost:4000/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://localhost:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>
