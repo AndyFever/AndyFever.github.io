@@ -13,7 +13,7 @@ comments: true
 share: true
 ---
 
-Disqus is a pretty cool plugin that allows you to enter comments onto blogs using you own avatar. It also saves a
+Disqus is a pretty cool plugin that allows you to enter comments onto blogs using your own avatar. It also saves a
 shed load of coding through the back end as it used a simple API.
 
 Just go to the [Disqus](https://disqus.com/home/) homepage and setup your account.
