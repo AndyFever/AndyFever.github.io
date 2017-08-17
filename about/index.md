@@ -1,23 +1,25 @@
 ---
 layout: page
-title: About Existential Testing
+title: About Rapid Testing
 excerpt: "Disussing the merits of sharing knowledge around testing."
 modified: 2017-08-15T19:44:38.564948-04:00
 ---
 
-## What the hell is this place all about?
+## What is the Rapid Testing site all about?
 
-*Existential* - __Relating to the existence of a thing.__
+This is a blog about...well there's a clue in the title. Testing is a function that provides feedback on aspects of software like quality, performance and such. Rapid Testing is about providing this feedback to stakeholders as part of a continuous integration cycle.
 
-*Test*        - __A procedure intended to establish the quality, performance, or reliability of something__
+Integrating testing into continuous integration frameworks can be hard, very hard. This is is especially true if you are working in an environment that needs large amounts of manual testing.
 
-Somethings we all 'know':
+This site discusses various approaches to successfully speeding up software testing. We will be covering:
 
-1. When software reaches a customer, it should work in a manner they expect.
-2. We only have a set amount of resources to deliver the software
-2. Code with quality issues is likely to impact #1, or #2 or both.
+- Business Driven Development
+- Acceptance Test Automation
+- Requirements Gathering
+- Unit Testing vs Acceptance Testing
+- Setting up Test Frameworks
+- Test Communications
 
-This site discusses techniques developers and testers can adopt to improve the efficiency of
-delivering code. Initially we will be covering techniques that support the agile methodology, so
-testing in multiple cycles a day with automated tests linked with continuous integration servers right
-the way through to agile reporting techniques.
+#### About the Author
+
+I have worked in and around Testing for 17 years including roles as a Test Manager, Tester, Software Developer and Head of Software Delivery. This includes working using both Agile and Waterfall methodologies and applying them in the Education, Pharmaceutical and Finance sectors.
