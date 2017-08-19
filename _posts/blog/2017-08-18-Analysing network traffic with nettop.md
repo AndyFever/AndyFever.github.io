@@ -29,7 +29,7 @@ This will give you connections over your wireless port. To see what's going on f
 
     nettop -m tcp
 
-![Network information output]({{ site.url }}/img/nettop_output.jpg)
+![Network information output]({{ site.url }}/images/nettop_output.jpg)
 
 #### Viewing Network Traffic for Performance Testing
 
