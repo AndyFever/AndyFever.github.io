@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title: Rapid Testing
+title: Rapid Testing Blogs
 locale: en_US
-description: A space for Developers and Testers to discuss things related to testing.
+description: Discussing the latest techniques for testing quality software
 logo: site-logo.png
 search: true
 url: http://rapidtest.software/
