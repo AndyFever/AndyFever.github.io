@@ -3,7 +3,7 @@ layout: post
 title: Jekyll and no hide
 excerpt: "Why the world needs yet another technical blog hosted statically through github and generated with Jekyll"
 modified: 2017-08-17
-categories: articles
+categories: blog
 tags: [jekyll]
 image:
   feature:

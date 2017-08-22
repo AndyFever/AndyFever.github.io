@@ -5,9 +5,10 @@ modified:
 categories: blog
 excerpt:
 tags: [culture, teams]
+published: true
 image:
   feature:
-date: 2015-08-22T08:08:50-04:00
+date: 2017-08-21T08:08:50-04:00
 ---
 
 You've got your team trained and working as a tight knit unit, which is a relief as you have a big project that you need to deliver in a few weeks and you're still finding issues at a rate that makes you uncomfortable. Then you get some requests to 'work from home' from your team.
